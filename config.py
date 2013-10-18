@@ -19,7 +19,14 @@ os_auth_url='http://192.168.1.241:5000/v2.0/'
 
 # the list of credentials to bareemetal machines used for the test with 
 hypervisors = {
-        'root@rome2.t-labs.us':'Tlabs5050'
+        'root@rome2.t-labs.us':'Tlabs5050',
+        'root@rome3.t-labs.us':'Tlabs5050'
+}
+
+# the list of credentials to virtual machines used for the test -- if
+# this is provided, then these credentials are used instead of hypervisor creds
+vms = {
+        'root@rome2.t-labs.us':'Tlabs5050',
         'root@rome3.t-labs.us':'Tlabs5050'
 }
 
@@ -29,7 +36,7 @@ hypervisors = {
 
 # Currently, these tests are between a pair 
 # of VMs on otherwise unloaded hypervisors
-dp_tests = {
+all_dp_tests = {
         'one_packet_ping_same_hypervisor': {'times': 20}, 
         'one_packet_ping_diff_hypervisor': {'times': 20},
         'ping_same_hypervisor': {'duration': 30 }, 
